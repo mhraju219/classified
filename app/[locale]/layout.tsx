@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
@@ -23,7 +23,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   setRequestLocale(locale);
 
-  const messages = (await import(`@/messages/${locale}.json`)).default;
+  const messages = await getMessages();
   const dir = isRtlLocale(locale) ? "rtl" : "ltr";
 
   return (

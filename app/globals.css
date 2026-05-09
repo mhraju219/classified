@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm editorial light theme — bone background, ink text, bronze accent */
+    --background: 36 30% 98%;
+    --foreground: 24 15% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 24 15% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 15% 12%;
+
+    --primary: 26 78% 42%;
+    --primary-foreground: 36 30% 98%;
+
+    --secondary: 30 20% 94%;
+    --secondary-foreground: 24 20% 18%;
+
+    --muted: 30 15% 94%;
+    --muted-foreground: 24 8% 42%;
+
+    --accent: 28 75% 50%;
+    --accent-foreground: 36 30% 98%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 142 50% 38%;
+    --success-foreground: 0 0% 98%;
+
+    --warning: 38 95% 50%;
+    --warning-foreground: 24 50% 12%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 26 78% 42%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    /* Charcoal/ink dark theme — stays warm, never blue-cold */
+    --background: 24 12% 8%;
+    --foreground: 36 25% 95%;
+
+    --card: 24 10% 11%;
+    --card-foreground: 36 25% 95%;
+
+    --popover: 24 10% 11%;
+    --popover-foreground: 36 25% 95%;
+
+    --primary: 28 80% 55%;
+    --primary-foreground: 24 50% 10%;
+
+    --secondary: 24 8% 16%;
+    --secondary-foreground: 36 20% 92%;
+
+    --muted: 24 8% 16%;
+    --muted-foreground: 30 10% 65%;
+
+    --accent: 30 80% 58%;
+    --accent-foreground: 24 50% 10%;
+
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 142 45% 48%;
+    --success-foreground: 0 0% 98%;
+
+    --warning: 38 95% 58%;
+    --warning-foreground: 24 50% 10%;
+
+    --border: 24 8% 20%;
+    --input: 24 8% 20%;
+    --ring: 28 80% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv01", "cv11";
+  }
+
+  /* Distinctive editorial display headings */
+  h1, h2, h3, .font-display {
+    @apply font-display tracking-tight;
+  }
+
+  /* RTL adjustments for Arabic/Urdu/Persian */
+  [dir="rtl"] body {
+    @apply font-arabic;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: hsl(var(--primary) / 0.25);
+    color: hsl(var(--foreground));
+  }
+
+  /* Focus ring — accessible without being tacky */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 999px;
+    border: 2px solid hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground) / 0.5); }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* Subtle grain overlay for hero sections — adds tactility without distraction */
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--tw-bg-noise, none);
+    opacity: 0.06;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "Common": {
+    "appName": "Classified Marketplace",
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "viewAll": "View all"
+  },
+  "Home": {
+    "tagline": "Buy. Sell. Hire. Get hired.",
+    "subTagline": "Classified ads, jobs, and a CV builder — in one place.",
+    "ctaPostAd": "Post an ad",
+    "ctaBrowseJobs": "Browse jobs"
+  },
+  "Auth": {
+    "login": "Log in",
+    "register": "Create account",
+    "logout": "Log out",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithPhone": "Continue with phone",
+    "continueWithEmail": "Continue with email"
+  },
+  "Nav": {
+    "ads": "Ads",
+    "jobs": "Jobs",
+    "cv": "CV Builder",
+    "messages": "Messages",
+    "dashboard": "Dashboard"
+  }
+}
